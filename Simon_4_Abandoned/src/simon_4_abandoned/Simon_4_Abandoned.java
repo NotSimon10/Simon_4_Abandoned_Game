@@ -4,10 +4,9 @@ import java.util.Scanner;
 
 public class Simon_4_Abandoned {
     
-    static String username;
-    static boolean dead;
     static String Input;
-    
+    static boolean dead;
+    static String username;
 
     public static void main(String[] args) {
     begin();
@@ -62,6 +61,8 @@ public class Simon_4_Abandoned {
         
         
     static void begingame() {
+        
+        System.out.println("");
         System.out.println("You are trapped in a abandoned hospital. All you can remember is the outbreak.");
         System.out.println("You don't know what the outbreak was of. You just remember your name, " + username + ".");
         System.out.println("When you leave the bed, you see a dim light that flickers into the room at the pace of less than a second.");
@@ -109,6 +110,8 @@ public class Simon_4_Abandoned {
     }
     
     static void dark() {
+        
+        System.out.println("");
         System.out.println("You walk into the dark hallway. You see nothing, nor do you hear anything.");
         System.out.println("As you walk along, you hear a faint noise. You casually stop as you hear your heart beat rise.");
         System.out.println("When you continue walking you see glass beneath your feet. You assume that was causing the noise.");
@@ -148,12 +151,13 @@ public class Simon_4_Abandoned {
 
     static void opennote() {
         
+            System.out.println("");
             System.out.println("You reach down and grab the note. It says \"Your mom is dead. She's in the room 508.\"");
             System.out.println("Your heart drops once again. You can no longer see straight. Then, everything is black.");
             System.out.println("You wake up with the note in your hand. Laying on the floor with blood on the ground.");
             System.out.println("Your back is sore and you can't make up the fact you landed on glass. There are three glass");
             System.out.println("pieces in your back. You reach back and pull them out. Screaming as you do so. Then you remember");
-            System.out.println("that your mom is supposably dead. Yet... Maybe someones messing with you?");
+            System.out.println("that your mom is supposedly dead. Yet... Maybe someones messing with you?");
             System.out.println("Should you get your mom or leave her?");
             System.out.println("Type, Get Mom or Leave Mom.");
             momchoice();
@@ -168,11 +172,11 @@ public class Simon_4_Abandoned {
             Scanner mom = new Scanner(System.in);
             Input = mom.nextLine();
         
-        if("get mom".equalsIgnoreCase(Input)) {
+        if(Input.contains("o")) {
                 getmom();
                 
             }
-            else if("leave mom".equalsIgnoreCase(Input)) {
+            else if(Input.contains("l")) {
                 leavemom();
                 
             }
@@ -189,6 +193,8 @@ public class Simon_4_Abandoned {
     }
     
     static void getmom() {
+        
+        System.out.println("");
         System.out.println("You know you are on floor six because the room in front of you says 611.");
         System.out.println("You must look around for a way down.. After walking around, you find an");
         System.out.println("elevator and a set of stairs?");
@@ -215,10 +221,31 @@ public class Simon_4_Abandoned {
     
     static void elevatordeath() {
         
+        System.out.println("");
         System.out.println("The elevator is shaky as you go down, and all of a sudden...");
         System.out.println("It goes silent. The elevator is no longer connected. As you fall");
         System.out.println("to your death, you pray that your mom is okay.");
         System.out.println("In Pace Requiescat, " + username + ".");
+        System.out.println("");
+        System.out.println("Do you want to go to the last checkpoint?");
+        checkpointelevator();
+    }
+    
+    static void checkpointelevator() {
+    Scanner choose = new Scanner(System.in);
+    Input = choose.nextLine();
+    if("yes".equalsIgnoreCase(Input)) {
+        System.out.println("Okay let's go back!");
+        opennote();
+        
+    }
+    else if("no".equalsIgnoreCase(Input)) {
+        System.out.println("Okay. Thanks for playing.");
+        
+    }else{
+        System.out.println("Please input Yes or No.");
+    }
+    
         
     }
     
