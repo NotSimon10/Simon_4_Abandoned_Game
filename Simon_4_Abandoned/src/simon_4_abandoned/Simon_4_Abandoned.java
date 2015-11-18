@@ -7,10 +7,28 @@ public class Simon_4_Abandoned {
     static String Input;
     static boolean dead;
     static String username;
+    static int wanttoplay = 2;
 
     public static void main(String[] args) {
-    begin();
-    }
+    
+        while(wanttoplay > 1) {
+            begin();
+            }
+        
+        if (wanttoplay > 1) {
+            begin();
+            
+        }
+        else { while (wanttoplay < 1) {
+        gameover();
+        
+        }
+        }
+        }
+         
+    
+   
+    
     static void begin() {
         
         Scanner yes = new Scanner(System.in);
@@ -186,12 +204,11 @@ public class Simon_4_Abandoned {
             }
 
 
-}
+    }
     static void leavemom() {
     
     
     }
-    
     static void getmom() {
         
         System.out.println("");
@@ -250,6 +267,59 @@ public class Simon_4_Abandoned {
     }
     
     static void stairs() {
+        System.out.println("");
+        System.out.println("You walk down the dusty set of stairs and see the room 511.");
+        System.out.println("You must walk across the hall to your right to reach room 508.");
+        System.out.println("Before you arrive, you hear a scream, you run to the room and your mom \nis on the floor with blood on the ground.");
+        System.out.println("The window is open, and the hall is empty behind you.");
+        System.out.println("Window or Hall?");
+        deadmom();
+    }
+    
+    static void deadmom() {
+      Scanner mom = new Scanner(System.in);
+        Input = mom.nextLine();
+        if("Hall".equalsIgnoreCase(Input)) {
+            momhall();
+        }
+        else if("Window".equalsIgnoreCase(Input)) {
+            momwindow();
+        }
+        else{
+            System.out.println("Please input Window or Hall.");
+            deadmom();
+        }
+    }
+    
+    static void momhall() {
+        System.out.println("You leave the hall and hear a shuffle from the room. You turn around");
+        System.out.println("and the killer climbs in the window. That's the last thing you remember.");
+        System.out.println("");
+        System.out.println("Game Over " + username + ".");
+        wanttoplay();
+    }
+    
+    static void momwindow() {
+        System.out.println("");
+        
+    
+    }
+    
+    static void wanttoplay() {
+        System.out.println("Do you want to play again?");
+        Scanner play = new Scanner(System.in);
+        Input = play.nextLine();
+        if("yes".equalsIgnoreCase(Input)) {
+            wanttoplay = 2;
+        }
+        else if("no".equalsIgnoreCase(Input)) {
+            wanttoplay = -1;
+        } else {
+            System.out.println("Please input Yes or No.");
+        }
+    }
+    
+    static void gameover() {
         
     }
 }
